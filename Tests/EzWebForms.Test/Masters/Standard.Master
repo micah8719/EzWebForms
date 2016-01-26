@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Masters/Base.Master" AutoEventWireup="true" CodeBehind="Standard.master.cs" Inherits="EzWebForms.Test.Masters.Standard" %>
+
+<%@ Register TagPrefix="ez" Namespace="EzWebForms.Controls" Assembly="EzWebForms" %>
+
+<asp:Content runat="server" ContentPlaceHolderID="Content">
+	<ez:EzJavaScriptLoader runat="server">
+		<ScriptTemplate>
+			<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+			<script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+			<script type="text/javascript" src="//cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+			<asp:ContentPlaceHolder runat="server" ID="Scripts" />
+		</ScriptTemplate>
+	</ez:EzJavaScriptLoader>
+	<ez:EzStylesheetLoader runat="server">
+		<StyleTemplate>
+			<link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+			<style type="text/css">
+				li.L0, li.L1, li.L2, li.L3,
+				li.L5, li.L6, li.L7, li.L8 {
+					list-style-type: decimal !important;
+				}
+				body {
+					-webkit-tab-size: 4;
+					-moz-tab-size: 4;
+					-ms-tab-size: 4;
+					-o-tab-size: 4;
+					tab-size: 4;
+				}
+			</style>
+			<asp:ContentPlaceHolder runat="server" ID="Styles" />
+		</StyleTemplate>
+	</ez:EzStylesheetLoader>
+	<div data-role="page">
+		<header data-role="header">
+			<asp:ContentPlaceHolder runat="server" ID="Header" />
+		</header>
+		<section data-role="main" class="ui-content">
+			<asp:ContentPlaceHolder runat="server" ID="Content" />
+		</section>
+		<footer data-role="footer">
+			<asp:ContentPlaceHolder runat="server" ID="Footer" />
+		</footer>
+	</div>
+</asp:Content>

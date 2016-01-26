@@ -1,0 +1,14 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.master.cs" Inherits="EzWebForms.Test.Masters.Base" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title></title>
+</head>
+<body>
+	<form id="form1" runat="server">
+		<asp:ContentPlaceHolder runat="server" ID="Content"/>
+	</form>
+</body>
+</html>
