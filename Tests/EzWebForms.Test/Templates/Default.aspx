@@ -123,6 +123,7 @@ var tag = "H1".ConvertTo&lt;HtmlTextWriterTag&gt;(new StringToHtmlTextWriterTagC
 		<h3>LINQ Extensions (Control Extensions)</h3>
 		<control:CodeBlock runat="server" Language="CSharp">
 var allEzUserControls = page.FindControlsOfType&lt;EzUserControl&gt;(); // returns IEnumerable&lt;EzUserControl&gt;
+var isInUpdatePanel = control.IsInUpdatePanel(); // returns true if control is inside of an UpdatePanel
 		</control:CodeBlock>
 	</div>
 	
