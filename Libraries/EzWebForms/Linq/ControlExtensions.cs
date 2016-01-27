@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.UI;
 
 namespace EzWebForms.Linq
@@ -22,6 +23,28 @@ namespace EzWebForms.Linq
 					yield return innerControl;
 				}
 			}
+		}
+
+		public static bool IsInUpdatePanel(this Control control)
+		{
+			if (control == null)
+			{
+				throw new ArgumentNullException(nameof(control));
+			}
+
+			var currentParent = control.Parent;
+
+			while (currentParent != null && !(currentParent is Page))
+			{
+				if (currentParent is UpdatePanel)
+				{
+					return true;
+				}
+
+				currentParent = currentParent.Parent;
+			}
+
+			return false;
 		}
 	}
 }
