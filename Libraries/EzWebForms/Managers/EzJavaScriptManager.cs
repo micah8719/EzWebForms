@@ -17,11 +17,12 @@ namespace EzWebForms.Managers
 			_type = page.GetType();
 		}
 
-		public EzJavaScriptManager(Control control) : this(control.Page)
+		public EzJavaScriptManager(Control control)
 		{
+			_page = control.Page;
 			_control = control;
 			_type = control.GetType();
-			_isInUpdatePanel = IsInUpdatePanel();
+			_isInUpdatePanel = _control.IsInUpdatePanel();
 		}
 
 		public void RegisterClientScriptBlock(string script, bool addScriptTags = true)
@@ -94,23 +95,6 @@ namespace EzWebForms.Managers
 			{
 				_page.ClientScript.RegisterStartupScript(_type, script.ToMd5(), script, addScriptTags);
 			}
-		}
-
-		private bool IsInUpdatePanel()
-		{
-			var currentParent = _control.Parent;
-
-			while (currentParent != null && !(currentParent is Page))
-			{
-				if (currentParent is UpdatePanel)
-				{
-					return true;
-				}
-
-				currentParent = currentParent.Parent;
-			}
-
-			return false;
 		}
 	}
 }
