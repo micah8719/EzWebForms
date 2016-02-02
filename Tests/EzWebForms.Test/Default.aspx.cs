@@ -1,9 +1,9 @@
 ﻿using System;
-using EzWebForms.Pages;
+using System.Web.UI;
 
 namespace EzWebForms.Test
 {
-	public partial class Default : EzPage
+	public partial class Default : Page
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{

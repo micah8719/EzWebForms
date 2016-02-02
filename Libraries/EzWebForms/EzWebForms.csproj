@@ -47,18 +47,14 @@
     <Compile Include="Controls\EzStylesheetLoader.cs" />
     <Compile Include="Controls\EzJavaScriptLoader.cs" />
     <Compile Include="Controls\EzWebControl.cs" />
+    <Compile Include="Converters\ValueTypeConverter.cs" />
     <Compile Include="Extensibility\IValueConverter.cs" />
     <Compile Include="Linq\ControlExtensions.cs" />
     <Compile Include="Linq\NameValueCollectionExtensions.cs" />
     <Compile Include="Linq\ObjectExtensions.cs" />
-    <Compile Include="Managers\EzJavaScriptManager.cs" />
     <Compile Include="Managers\AppSettingsManager.cs" />
-    <Compile Include="Pages\EzPage.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Linq\StringExtensions.cs" />
-    <Compile Include="Managers\EzStylesheetManager.cs" />
     <Compile Include="Controls\EzUserControl.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using EzWebForms.Managers;
 
 namespace EzWebForms.Controls
 {
@@ -10,20 +9,6 @@ namespace EzWebForms.Controls
 	[Themeable(true)]
 	public class EzWebControl : WebControl, INamingContainer
 	{
-		protected EzJavaScriptManager JavaScriptManager { get; private set; }
-		protected EzStylesheetManager StylesheetManager { get; private set; }
-
-		public EzWebControl()
-		{
-			Init += WebPartWebControl_Init;
-		}
-
-		private void WebPartWebControl_Init(object sender, EventArgs e)
-		{
-			JavaScriptManager = new EzJavaScriptManager(this);
-			StylesheetManager = new EzStylesheetManager(this);
-		}
-
 		[Themeable(true)]
 		public virtual HtmlTextWriterTag Tag
 		{

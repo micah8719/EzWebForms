@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web.UI;
 using System.Xml.Serialization;
+using EzWebForms.Linq;
 
 namespace EzWebForms.Controls
 {
@@ -57,13 +58,13 @@ namespace EzWebForms.Controls
 			{
 				if (!string.IsNullOrWhiteSpace(script.Code))
 				{
-					JavaScriptManager.RegisterStartupScript(script.Code);
+					this.RegisterStartupScript(script.Code);
 					continue;
 				}
 
 				if (!string.IsNullOrWhiteSpace(script.Source))
 				{
-					JavaScriptManager.RegisterClientScriptInclude(script.Source);
+					this.RegisterClientScriptInclude(script.Source);
 				}
 			}
 		}

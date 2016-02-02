@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web.UI;
 using System.Xml.Serialization;
+using EzWebForms.Linq;
 
 namespace EzWebForms.Controls
 {
@@ -55,12 +56,12 @@ namespace EzWebForms.Controls
 
 			foreach (var stylesheet in styleCollection.Stylesheets)
 			{
-				StylesheetManager.RegisterStylesheet(stylesheet.HRef);
+				this.RegisterStylesheet(stylesheet.HRef);
 			}
 
 			foreach (var cssStyle in styleCollection.CssStyles)
 			{
-				StylesheetManager.RegisterCss(cssStyle.Code);
+				this.RegisterCss(cssStyle.Code);
 			}
 		}
 
