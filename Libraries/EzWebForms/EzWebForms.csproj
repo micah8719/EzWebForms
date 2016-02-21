@@ -44,10 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\ValueConverterBase.cs" />
+    <Compile Include="Controls\EzDataBoundControl.cs" />
+    <Compile Include="Controls\EzHierarchicalRepeater.cs" />
     <Compile Include="Controls\EzStylesheetLoader.cs" />
     <Compile Include="Controls\EzJavaScriptLoader.cs" />
     <Compile Include="Controls\EzWebControl.cs" />
     <Compile Include="Converters\ValueTypeConverter.cs" />
+    <Compile Include="Extensibility\HierarchicalData.cs" />
+    <Compile Include="Extensibility\HierarchicalEnumerable.cs" />
     <Compile Include="Extensibility\IValueConverter.cs" />
     <Compile Include="Linq\ControlExtensions.cs" />
     <Compile Include="Linq\NameValueCollectionExtensions.cs" />

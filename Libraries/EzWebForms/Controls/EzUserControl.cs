@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using System.Web.UI;
 
 namespace EzWebForms.Controls
@@ -19,34 +18,8 @@ namespace EzWebForms.Controls
 		[Themeable(true)]
 		public virtual string CssClass
 		{
-			get
-			{
-				return Attributes.Keys
-					.Cast<string>()
-					.ToDictionary(attribute => Attributes[attribute])
-					.Where(attribute => attribute.Key.Equals("class", StringComparison.InvariantCultureIgnoreCase))
-					.Select(attribute => attribute.Value)
-					.FirstOrDefault() ?? String.Empty;
-			}
-			set
-			{
-				var existingAttribute = Attributes.Keys
-					.Cast<string>()
-					.ToDictionary(attribute => Attributes[attribute])
-					.Where(attribute => attribute.Key.Equals("class", StringComparison.InvariantCultureIgnoreCase))
-					.Select(attribute => attribute.Value)
-					.FirstOrDefault();
-
-				if (existingAttribute != null)
-				{
-					Attributes.Remove("class");
-				}
-
-				if (!String.IsNullOrWhiteSpace(value))
-				{
-					Attributes.Add("class", value);
-				}
-			}
+			get { return ViewState["CssClass"] as string ?? String.Empty; }
+			set { ViewState["CssClass"] = value; }
 		}
 
 		public virtual bool RenderContainer => true;
@@ -63,6 +36,11 @@ namespace EzWebForms.Controls
 		protected virtual void AddAttributesToRender(HtmlTextWriter writer)
 		{
 			writer.AddAttribute(HtmlTextWriterAttribute.Id, ClientID);
+
+			if (!String.IsNullOrWhiteSpace(CssClass))
+			{
+				writer.AddAttribute(HtmlTextWriterAttribute.Class, CssClass);
+			}
 
 			foreach (string attribute in Attributes.Keys)
 			{

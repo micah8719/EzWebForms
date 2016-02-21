@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
+using EzWebForms.Controls;
 
 namespace EzWebForms.Linq
 {
@@ -63,11 +64,11 @@ namespace EzWebForms.Linq
 		{
 			if (control.IsInUpdatePanel())
 			{
-				ScriptManager.RegisterClientScriptBlock(control, control.GetType(), script.ToMd5(), script, addScriptTags);
+				ScriptManager.RegisterClientScriptBlock(control, typeof(EzJavaScriptLoader), script.ToMd5(), script, addScriptTags);
 			}
 			else
 			{
-				(control is Page ? ((Page) control) : control.Page).ClientScript.RegisterClientScriptBlock(control.GetType(), script.ToMd5(), script, addScriptTags);
+				(control is Page ? ((Page) control) : control.Page).ClientScript.RegisterClientScriptBlock(typeof(EzJavaScriptLoader), script.ToMd5(), script, addScriptTags);
 			}
 		}
 
@@ -75,11 +76,11 @@ namespace EzWebForms.Linq
 		{
 			if (control.IsInUpdatePanel())
 			{
-				ScriptManager.RegisterClientScriptInclude(control, control.GetType(), url.ToMd5(), url);
+				ScriptManager.RegisterClientScriptInclude(control, typeof(EzJavaScriptLoader), url.ToMd5(), url);
 			}
 			else
 			{
-				(control is Page ? ((Page) control) : control.Page).ClientScript.RegisterClientScriptInclude(control.GetType(), url.ToMd5(), url);
+				(control is Page ? ((Page) control) : control.Page).ClientScript.RegisterClientScriptInclude(typeof(EzJavaScriptLoader), url.ToMd5(), url);
 			}
 		}
 
@@ -111,11 +112,11 @@ namespace EzWebForms.Linq
 		{
 			if (control.IsInUpdatePanel())
 			{
-				ScriptManager.RegisterOnSubmitStatement(control, control.GetType(), script.ToMd5(), script);
+				ScriptManager.RegisterOnSubmitStatement(control, typeof(EzJavaScriptLoader), script.ToMd5(), script);
 			}
 			else
 			{
-				(control is Page ? ((Page) control) : control.Page).ClientScript.RegisterOnSubmitStatement(control.GetType(), script.ToMd5(), script);
+				(control is Page ? ((Page) control) : control.Page).ClientScript.RegisterOnSubmitStatement(typeof(EzJavaScriptLoader), script.ToMd5(), script);
 			}
 		}
 
@@ -123,11 +124,11 @@ namespace EzWebForms.Linq
 		{
 			if (control.IsInUpdatePanel())
 			{
-				ScriptManager.RegisterStartupScript(control, control.GetType(), script.ToMd5(), script, addScriptTags);
+				ScriptManager.RegisterStartupScript(control, typeof(EzJavaScriptLoader), script.ToMd5(), script, addScriptTags);
 			}
 			else
 			{
-				(control is Page ? ((Page) control) : control.Page).ClientScript.RegisterStartupScript(control.GetType(), script.ToMd5(), script, addScriptTags);
+				(control is Page ? ((Page) control) : control.Page).ClientScript.RegisterStartupScript(typeof(EzJavaScriptLoader), script.ToMd5(), script, addScriptTags);
 			}
 		}
 
