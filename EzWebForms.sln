@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzWebForms", "Libraries\EzW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzWebForms.Test", "Tests\EzWebForms.Test\EzWebForms.Test.csproj", "{AC1BA1E4-0BDB-40D9-9E53-3010DB1DE853}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzWebForms.EzWebParts", "Libraries\EzWebForms.EzWebParts\EzWebForms.EzWebParts.csproj", "{AB95392B-61D8-4C53-BACC-F87F8EAB4808}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AC1BA1E4-0BDB-40D9-9E53-3010DB1DE853}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC1BA1E4-0BDB-40D9-9E53-3010DB1DE853}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC1BA1E4-0BDB-40D9-9E53-3010DB1DE853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB95392B-61D8-4C53-BACC-F87F8EAB4808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB95392B-61D8-4C53-BACC-F87F8EAB4808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB95392B-61D8-4C53-BACC-F87F8EAB4808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB95392B-61D8-4C53-BACC-F87F8EAB4808}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
